@@ -98,7 +98,7 @@ export default function BarPage() {
   const [showConfetti, setShowConfetti] = useState(false)
   const [checkinBouncing, setCheckinBouncing] = useState(false)
 
-  const SITE_URL = 'https://worldcup-watch-t1s8.vercel.app'
+  const SITE_URL = 'kickoff-nyc.vercel.app'
 
   useEffect(() => {
     if (!bar || !user?.uid) return
