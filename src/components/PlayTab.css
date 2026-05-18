@@ -1,0 +1,140 @@
+/* ── MOBILE: true full screen, game fills everything above controls ── */
+@media (max-width: 899px) {
+  .play-tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .play-header { display: none; }
+
+  .play-frame-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .play-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  /* Landscape blocker */
+  .play-landscape-block {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: #000;
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px;
+  }
+
+  @media (orientation: landscape) {
+    .play-landscape-block { display: flex !important; }
+  }
+
+  .play-landscape-msg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .play-fullscreen-btn { display: none; }
+}
+
+/* ── DESKTOP ── */
+@media (min-width: 900px) {
+  .play-tab {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .play-header {
+    background: #0a1f0d;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .play-title { font-size: 17px; font-weight: 600; color: #fff; letter-spacing: -0.2px; }
+  .play-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  .play-fullscreen-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+
+  .play-fullscreen-btn:hover { background: rgba(255,255,255,0.18); color: #fff; }
+
+  .play-frame-wrap {
+    flex: 1;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .play-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .play-landscape-block { display: none !important; }
+
+  .play-frame-wrap:fullscreen { width: 100vw; height: 100vh; }
+  .play-frame-wrap:fullscreen .play-frame { width: 100%; height: 100%; }
+}
+
+.play-homescreen-tip {
+  position: fixed;
+  bottom: 168px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.75);
+  color: rgba(255,255,255,0.7);
+  font-size: 11px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  z-index: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: fadeout 4s forwards;
+  animation-delay: 3s;
+}
+
+@keyframes fadeout {
+  to { opacity: 0; }
+}
