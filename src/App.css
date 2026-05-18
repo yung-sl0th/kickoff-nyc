@@ -279,6 +279,321 @@
 .nav-item.active .nav-label { color: var(--green-dark); font-weight: 600; }
 .nav-item.active::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 28px; height: 2.5px; background: var(--green-dark); border-radius: 0 0 4px 4px; }
 
+/* ── PLAY TAB ── */
+/* Add this to the bottom of your src/App.css */
+
+.play-tab {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+  padding-bottom: 0;
+}
+
+.play-header {
+  background: #0a1f0d;
+  padding: 14px 16px;
+  flex-shrink: 0;
+}
+
+.play-header-top {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.play-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.play-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+}
+
+.play-frame-wrap {
+  flex: 1;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.play-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ── PLAY TAB ── */
+/* Add to bottom of src/App.css */
+
+.play-tab {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 116px);
+  height: calc(100dvh - 116px);
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.play-header {
+  background: #0a1f0d;
+  padding: 12px 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.play-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.play-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.play-fullscreen-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.play-fullscreen-btn:hover {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.play-frame-wrap {
+  flex: 1;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+  width: 100%;
+}
+
+.play-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+/* Desktop: play tab fills the full content area */
+@media (min-width: 900px) {
+  .play-tab {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .play-header { display: none; }
+}
+
+/* ── ADD TO BOTTOM OF src/App.css ── */
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+}
+
+.sidebar-toggle { display: none; }
+
+@media (min-width: 900px) {
+  .sidebar-toggle {
+    display: flex;
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 300;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .sidebar-toggle:hover { background: rgba(255,255,255,0.2); }
+
+  .desktop-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 240px;
+    background: #0a1f0d;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    z-index: 200;
+    transition: transform 0.25s ease;
+    overflow: hidden;
+  }
+
+  .desktop-sidebar.collapsed { transform: translateX(-240px); }
+
+  .sidebar-brand {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sidebar-brand-icon { font-size: 26px; }
+  .sidebar-brand-text { color: #fff; font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+  .sidebar-nav { padding: 12px 10px; display: flex; flex-direction: column; gap: 2px; flex: 1; }
+
+  .sidebar-nav-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 14px; border-radius: 10px; cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .sidebar-nav-item:hover { background: rgba(255,255,255,0.06); }
+  .sidebar-nav-item.active { background: rgba(255,255,255,0.1); }
+  .sidebar-nav-item .s-icon { font-size: 20px; }
+  .sidebar-nav-item .s-label { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 500; }
+  .sidebar-nav-item.active .s-label { color: #fff; font-weight: 600; }
+
+  .app {
+    transition: margin-left 0.25s ease, width 0.25s ease;
+    margin-left: 240px !important;
+    width: calc(100% - 240px) !important;
+    max-width: none !important;
+    padding-bottom: 0 !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow-y: auto !important;
+  }
+
+  .app.sidebar-hidden {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .bottom-nav { display: none !important; }
+  .brand-row { display: none !important; }
+  .topbar { position: sticky !important; top: 0 !important; z-index: 50 !important; }
+}
+
+/* Desktop hidden by default on mobile */
+.desktop-sidebar { display: none; }
+
+/* ── DISCOVER HERO BANNER ── */
+.discover-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.discover-hero-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.4px;
+  margin-bottom: 3px;
+}
+
+.discover-hero-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.discover-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(229,57,53,0.08);
+  border: 1px solid rgba(229,57,53,0.2);
+  color: #e53935;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.discover-hero-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e53935;
+  animation: pulse 1.5s infinite;
+  display: inline-block;
+}
+
+/* ── PLAY MODE TOPBAR — hide everything except hamburger + actions ── */
+.topbar-play-mode {
+  padding-bottom: 0 !important;
+}
+
+/* On desktop, hide entire topbar in play mode */
+@media (min-width: 900px) {
+  .topbar-play-mode .topbar-row {
+    display: none !important;
+  }
+
+  /* Play tab gets full height */
+  .app:has(.play-tab) {
+    overflow: hidden !important;
+  }
+}
+
+/* On mobile, topbar-play-mode just hides search and tabs */
+/* (search/tabs already hidden via tab !== 'play' conditional) */
+@media (max-width: 899px) {
+  .topbar-play-mode {
+    background: #0a1f0d;
+  }
+
+  /* Play tab height accounts for slim topbar + bottom nav */
+  .play-tab {
+    height: calc(100dvh - 108px) !important;
+  }
+}
+
+/* ── SIDEBAR always visible fix ── */
+@media (min-width: 900px) {
+  .desktop-sidebar {
+    background: #0a1f0d !important;
+  }
+}
+
+/* ── ADD TO BOTTOM OF src/App.css ── */
+
+/* Mobile Play tab: hide topbar + bottom nav so game is truly full screen */
 @media (max-width: 899px) {
   .app.playing .topbar { display: none !important; }
   .app.playing .bottom-nav { display: none !important; }

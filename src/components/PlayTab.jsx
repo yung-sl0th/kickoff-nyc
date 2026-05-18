@@ -57,6 +57,12 @@ export default function PlayTab() {
           </div>
         </div>
       </div>
+       {isMobile && (
+  <div className="play-homescreen-tip">
+    ⚡ Add to Home Screen for true full screen
+  </div>
+)}
     </div>
   )
 }
+// deploy Sun May 17 21:37:34 EDT 2026

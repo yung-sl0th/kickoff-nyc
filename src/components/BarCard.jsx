@@ -16,7 +16,7 @@ const REACTIONS = [
   { emoji: '🍕', label: 'Food' },
 ]
 
-const SITE_URL = 'kickoff-nyc.vercel.app'
+const SITE_URL = 'https://worldcup-watch-t1s8.vercel.app'
 
 // Team gradient and flag mapping
 const TEAM_GRADIENTS = {

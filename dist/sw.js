@@ -1,0 +1,1 @@
+self.addEventListener('push', function(event) { const data = event.data ? event.data.json() : {}; self.registration.showNotification(data.title || 'Kickoff NYC', { body: data.body || 'Match starting soon!', icon: '/favicon.svg' }); })
